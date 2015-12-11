@@ -1,0 +1,1 @@
+(function() { window.APP={"name":"Tools","description":"tools","version":"0.1.0","repository":"https://github.com/ChristosGeorgiou/tools.git","author":{"name":"Christos Georgiou","email":"xris.georgiou@gmail.com","url":"http://christosgeorgiou.gr"}}; })()

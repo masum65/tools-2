@@ -1,0 +1,56 @@
+<header class="container">
+  <nav class="navbar">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" ng-click="navbarCollapsed = !navbarCollapsed">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <div class="navbar-brand">
+        <i class="fa fa-wrench fa-fw"></i> Christos' Tools
+        <small>v{{APP.version}}</small>
+      </div>
+    </div>
+
+    <div class="collapse navbar-collapse" uib-collapse="navbarCollapsed">
+
+      <ul class="nav navbar-nav">
+
+        <li uib-dropdown>
+          <a href uib-dropdown-toggle>
+            Tools
+            <span class="caret"></span>
+          </a>
+          <ul class="uib-dropdown-menu">
+            <li><a ui-sref="app.pcdetails"><i class="fa fa-keyboard-o fa-fw"></i> PC Technical Details</a></li>
+            <li><a ui-sref="app.quakes"><i class="fa fa-bullseye fa-fw"></i> Earthquakes Map Explorer</a></li>
+            <li class="disabled"><a ui-sref="app.none">Clock Tools (alarm, stopwatch)</a></li>
+            <li class="disabled"><a ui-sref="app.none">Network Tools (speed test, ping, traceroute)</a></li>
+            <li class="disabled"><a ui-sref="app.none">Screen Share</a></li>
+            <li class="disabled"><a ui-sref="app.none">Random Data Generators (passwords, lorem, datasets)</a></li>
+            <li class="disabled"><a ui-sref="app.none">Refenes (Group Expenses Manager)</a></li>
+            <li class="disabled"><a ui-sref="app.none">Dynamic IP Registry</a></li>
+            <li class="disabled"><a ui-sref="app.none">Facebook Cover Generator</a></li>
+          </ul>
+        </li>
+
+        <li ui-sref-active="active">
+          <a ui-sref="app.about">About</a>
+        </li>
+      </ul>
+
+    </div>
+
+  </nav>
+</header>
+
+<section ui-view class="container"></section>
+
+<footer class="container text-center">
+  <ul class="list-inline">
+    <li>2016 Christos' Tools v{{APP.version}}</li>
+    <li>By <a href="{{APP.author.url}}">{{APP.author.name}}</a></li>
+    <li>Repo: <a href="{{APP.repository}}">GitHub</a></li>
+  </ul>
+</footer>
