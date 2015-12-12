@@ -12,7 +12,7 @@
   },
   "scripts": {
     "start": "npm-run-all -p serve gulp",
-    "serve": "nodemon --watch public",
+    "serve": "nodemon --watch public --watch server",
     "gulp": "gulp"
   },
   "dependencies": {

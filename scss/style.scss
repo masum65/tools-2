@@ -12,7 +12,6 @@ body {
     padding-top: 15px;
   }
 }
-
 footer {
   margin-top: 15px;
   p {
@@ -91,24 +90,32 @@ input:focus,
     width: 450px;
   }
 }
-dl{
-  hr{
-    margin:5px 0;
+dl {
+  hr {
+    margin: 5px 0;
   }
-  &.dl-nomargin{
+  &.dl-nomargin {
     margin-bottom: 0;
   }
-  &.dl-horizontal{
-    &.dl-horizontal-sm{
-      dt{
-        width:60px;
+  &.dl-horizontal {
+    &.dl-horizontal-sm {
+      dt {
+        width: 60px;
       }
-      dd{
+      dd {
         margin-left: 65px;
       }
     }
   }
 }
-.dropdown-menu{
+.dropdown-menu {
   z-index: 1001;
+}
+.row {
+  margin-right: -7.5px;
+  margin-left: -7.5px;
+  >div {
+    padding-right: 7.5px;
+    padding-left: 7.5px;
+  }
 }

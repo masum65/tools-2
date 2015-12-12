@@ -7,10 +7,10 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <div class="navbar-brand">
+      <a ui-sref="app.home" class="navbar-brand">
         <i class="fa fa-wrench fa-fw"></i> Christos' Tools
         <small>v{{APP.version}}</small>
-      </div>
+      </a>
     </div>
 
     <div class="collapse navbar-collapse" uib-collapse="navbarCollapsed">
@@ -51,6 +51,7 @@
   <ul class="list-inline">
     <li>2016 Christos' Tools v{{APP.version}}</li>
     <li>By <a href="{{APP.author.url}}">{{APP.author.name}}</a></li>
-    <li>Repo: <a href="{{APP.repository}}">GitHub</a></li>
+    <li><a ui-sref="app.tos">TOS</a></li>
+    <li><a href="{{APP.repository}}">GitHub</a></li>
   </ul>
 </footer>

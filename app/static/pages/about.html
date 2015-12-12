@@ -1,0 +1,41 @@
+<ol class="breadcrumb">
+  <li><a ui-sref="app.home">Home</a></li>
+  <li class="active">About</li>
+</ol>
+<div class="row">
+  <div class="col-md-7">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">
+          FAQ
+        </h3>
+      </div>
+      <div class="panel-body">
+        <strong>What is this?</strong>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa, magni?</p>
+        <strong>But why?</strong>
+        <p>Minus explicabo rerum velit veniam sint voluptatibus tenetur soluta laudantium.</p>
+        <strong>Are you funny in the mind?</strong>
+        <p>I'm not crazy, my mother had me tested</p>
+        <strong>My PC exploded, may I sue you?</strong>
+        <p>Sure! But you may also read the TOS about how these tools are provided. tl;dr I have no responsibily about </p>
+        <strong>May I suggest you new tools?</strong>
+        <p>Absolutely!</p>
+        <strong>When will it be ready?</strong>
+        <p>I don't know</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-5">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">
+          Used Libraries
+        </h3>
+      </div>
+      <div class="list-group">
+        <a ng-repeat="lib in vm.libs" class="list-group-item" target="_blank" href="{{::lib.href}}">{{::lib.name}}</a>
+      </div>
+    </div>
+  </div>
+</div>

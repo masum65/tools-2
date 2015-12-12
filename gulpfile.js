@@ -12,7 +12,7 @@ var debug = require('gulp-debug');
 
 var pkg = require('./package.json');
 
-_gulp.task('default', ['sass', 'build', 'config', 'views'], function() {
+_gulp.task('default', ['sass', 'build', 'config', 'copy'], function() {
   _gulp.watch("./scss/**/**.*", ['sass']);
   _gulp.watch("./app/**/*.js", ['build']);
   _gulp.watch("./app/**/*.html", ['copy']);
@@ -29,7 +29,7 @@ _gulp.task('sass', function() {
       suffix: ".min",
       extname: ".css"
     }))
-    .pipe(_gulp.dest("./public/css"));
+    .pipe(_gulp.dest("./public/css/"));
 });
 
 _gulp.task('build', ['config'], function() {
@@ -52,7 +52,7 @@ _gulp.task('build', ['config'], function() {
     .pipe(_gulp.dest("./public/scripts/"));
 });
 
-_gulp.task('views', ['index'], function() {
+_gulp.task('copy', ['index'], function() {
   return _gulp.src("./app/**/!(index.html)*.html", {
       base: './app'
     })
