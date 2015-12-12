@@ -3,7 +3,7 @@
   'use strict';
 
   angular
-    .module('app.pcdetails')
+    .module('app.home')
     .run(RoutesConfig);
 
   /* @ngInject */
@@ -13,11 +13,11 @@
 
   function getStates() {
     return [{
-      state: 'app.pcdetails',
+      state: 'app.home',
       config: {
-        url: "/pcdetails",
-        templateUrl: 'src/pcdetails/view.html',
-        controller: "PCDetailsController",
+        url: "/",
+        templateUrl: 'views/home/view.html',
+        controller: "HomeController",
       }
     }];
   }

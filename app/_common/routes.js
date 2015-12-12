@@ -23,7 +23,7 @@
       state: 'app',
       config: {
         abstract: true,
-        templateUrl: 'src/_common/views/layout.html',
+        templateUrl: 'views/_common/views/layout.html',
       }
     }];
   }

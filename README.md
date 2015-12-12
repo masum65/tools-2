@@ -12,3 +12,4 @@ A batch of useful online tools for various type of users. Every tool is crafted 
 - Refenes (Group Expenses Manager)
 - Dynamic IP Registry
 - Facebook Cover Generator
+- UTF8 <-> ANSI Convertor
