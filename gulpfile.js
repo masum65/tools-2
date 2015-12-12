@@ -1,29 +1,26 @@
 var fs = require('fs');
-var pkg = require('./package.json');
+var _gulp = require('gulp');
 var angularFilesort = require('gulp-angular-filesort');
 var concat = require('gulp-concat');
-var gulp = require('gulp');
-var gutil = require('gulp-util');
 var minify = require('gulp-clean-css');
-var minimatch = require('minimatch');
 var ngAnnotate = require('gulp-ng-annotate');
 var rename = require('gulp-rename');
 var sass = require('gulp-sass');
 var sourcemaps = require('gulp-sourcemaps');
 var uglify = require('gulp-uglify');
+var debug = require('gulp-debug');
 
-gulp.task('default', ['watch']);
+var pkg = require('./package.json');
 
-gulp.task('watch', ['sass', 'build'], function() {
-
-  gulp.watch("./scss/**/**.*", ['sass']);
-  gulp.watch("./public/src/**/*.js", ['build']);
-
+_gulp.task('default', ['sass', 'build', 'config', 'views'], function() {
+  _gulp.watch("./scss/**/**.*", ['sass']);
+  _gulp.watch("./app/**/*.js", ['build']);
+  _gulp.watch("./app/**/*.html", ['copy']);
+  _gulp.watch("./package.json", ['config']);
 });
 
-gulp.task('sass', function() {
-
-  return gulp.src("./scss/**/**.scss", {
+_gulp.task('sass', function() {
+  return _gulp.src("./scss/**/**.scss", {
       read: true,
     })
     .pipe(sass().on('error', sass.logError))
@@ -32,13 +29,14 @@ gulp.task('sass', function() {
       suffix: ".min",
       extname: ".css"
     }))
-    .pipe(gulp.dest("./public/assets/css"));
-
+    .pipe(_gulp.dest("./public/css"));
 });
 
-gulp.task('build', ['config'], function() {
-
-  return gulp.src("./public/src/**/*.js")
+_gulp.task('build', ['config'], function() {
+  return _gulp.src("./app/**/*.js")
+    .pipe(debug({
+      title: "build:js"
+    }))
     .pipe(angularFilesort())
     .pipe(sourcemaps.init())
     .pipe(concat("app.min.js", {
@@ -51,14 +49,31 @@ gulp.task('build', ['config'], function() {
       mangle: false
     }))
     .pipe(sourcemaps.write('./'))
-    .pipe(gulp.dest("./public/assets/scripts"));
-
+    .pipe(_gulp.dest("./public/scripts/"));
 });
 
-gulp.task('config', function() {
+_gulp.task('views', ['index'], function() {
+  return _gulp.src("./app/**/!(index.html)*.html", {
+      base: './app'
+    })
+    .pipe(debug({
+      title: "view:html"
+    }))
+    .pipe(_gulp.dest("./public/views/"));
+});
 
-  return fs.writeFile(
-    "./public/src/config.js",
+_gulp.task('index', function() {
+  return _gulp.src("./app/index.html")
+    .pipe(debug({
+      title: "view:index"
+    }))
+    .pipe(_gulp.dest("./public/"));
+});
+
+_gulp.task('config', function() {
+
+  fs.writeFileSync(
+    "./public/config.js",
     "(function() { window.APP=" + JSON.stringify({
       name: pkg.name.charAt(0).toUpperCase() + pkg.name.slice(1),
       description: pkg.description,

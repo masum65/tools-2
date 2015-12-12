@@ -2,7 +2,7 @@
   "name": "tools",
   "version": "0.1.0",
   "description": "tools",
-  "main": "server/server.js",
+  "main": "server/index.js",
   "license": "MIT",
   "repository": "https://github.com/ChristosGeorgiou/tools.git",
   "author": {
@@ -11,12 +11,9 @@
     "url": "http://christosgeorgiou.gr"
   },
   "scripts": {
-    "preserve": "npm run build && npm run sass",
-    "serve": "nodemon --watch public && npm run sass-watch",
-    "build": "node server/build.js",
-    "sass": "node-sass -o public/assets/css/ --output-style compressed --source-map public/assets/css/ scss",
-    "presass-watch": "npm run sass",
-    "sass-watch": "node-sass -w -o public/assets/css/ --output-style compressed --source-map public/assets/css/ scss"
+    "start": "npm-run-all -p serve gulp",
+    "serve": "nodemon --watch public",
+    "gulp": "gulp"
   },
   "dependencies": {
     "express": "^4.13.3",
@@ -24,7 +21,19 @@
     "useragent": "^2.1.8"
   },
   "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-angular-filesort": "^1.1.1",
+    "gulp-clean-css": "^1.0.2",
+    "gulp-concat": "^2.6.0",
+    "gulp-debug": "^2.1.2",
+    "gulp-json-transform": "^0.3.0",
+    "gulp-ng-annotate": "^1.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.1.1",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-uglify": "^1.5.1",
     "minimatch": "^3.0.0",
+    "ng-annotate": "^1.0.2",
     "node-sass": "^3.4.2",
     "uglify-js": "^2.6.1"
   }

@@ -1,9 +1,10 @@
+var path = require('path');
 var express = require('express');
 var app = express();
 
-app.use('./assets', express.static(__dirname + './public/assets'));
-app.use('./assets', function(req, res, next) {
-  res.send(404);
+app.use('/assets', express.static(path.resolve(__dirname + '/../public/assets')));
+app.use('/assets', function(req, res, next) {
+  res.sendStatus(404);
 });
 
 app.get('/api/ua', function(req, res, next) {
@@ -22,9 +23,9 @@ app.get('/api/ua', function(req, res, next) {
 });
 
 app.all('/*', function(req, res) {
-  res.sendFile(__dirname + '/public/index.html');
+  res.sendFile(path.resolve(__dirname + '/../public/index.html'));
 });
 
-var server = app.listen(3001, function() {
+var server = app.listen(3000, function() {
   console.log("[express] Server Started...");
 });
