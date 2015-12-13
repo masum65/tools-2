@@ -1,7 +1,7 @@
 {
   "name": "tools",
-  "version": "0.1.0",
-  "description": "tools",
+  "version": "0.2.0",
+  "description": "A collection of simple online tools",
   "main": "server/index.js",
   "license": "MIT",
   "repository": "https://github.com/ChristosGeorgiou/tools.git",

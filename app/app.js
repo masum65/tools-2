@@ -6,6 +6,7 @@
     'app.home',
     'app.static',
 
+    'app.clock',
     'app.pcdetails',
     'app.quakes',
 

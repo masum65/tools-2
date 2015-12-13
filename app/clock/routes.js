@@ -3,7 +3,7 @@
   'use strict';
 
   angular
-    .module('app.home')
+    .module('app.clock')
     .run(RoutesConfig);
 
   /* @ngInject */
@@ -13,13 +13,12 @@
 
   function getStates() {
     return [{
-      state: 'app.home',
+      state: 'app.clock',
       config: {
-        url: "/",
-        templateUrl: 'views/home/view.html',
-        data: {
-          pageTitle: 'Home'
-        }
+        tool: "clock",
+        url: "/clock",
+        templateUrl: 'views/clock/view.html',
+        controller: "ClockController",
       }
     }];
   }
