@@ -47,7 +47,6 @@
     activate();
 
     function activate() {
-      _setTool();
       _setLocation()
         .then(function() {
           vm.leaflet.center.lat = _location.latitude;
@@ -128,10 +127,6 @@
           }
         };
       });
-    }
-
-    function _setTool() {
-      console.log(vm)
     }
   }
 

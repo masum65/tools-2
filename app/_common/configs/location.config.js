@@ -9,8 +9,6 @@
   /* @ngInject */
   function LocationConfig(configHelperProvider, $locationProvider) {
     $locationProvider.html5Mode(true);
-
-    configHelperProvider.$get().notifyConfig("Location HTML5", true);
   }
 
 }());
