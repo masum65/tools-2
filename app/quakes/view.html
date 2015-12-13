@@ -1,38 +1,62 @@
 <ol class="breadcrumb">
   <li><a ui-sref="app.home">Home</a></li>
-  <li class="active">Earthquakes Map Explorer</li>
+  <li class="active">{{tool.title}} v{{tool.version}}</li>
 </ol>
+<div class="panel panel-default" ng-class="{loading:vm.loading}">
+  <leaflet lf-center="vm.leaflet.center" paths="vm.leaflet.paths" markers="vm.leaflet.markers" height="450px" width="100%"></leaflet>
+</div>
 <div class="row">
-  <div class="col-md-8">
-    <div class="panel panel-default">
-      <leaflet lf-center="vm.leaflet.center" paths="vm.leaflet.paths" markers="vm.leaflet.markers" height="450px" width="100%"></leaflet>
-    </div>
-  </div>
-  <div class="col-md-4">
+  <div class="col-sm-8">
     <div class="panel panel-default">
       <div class="panel-heading">
         <h3 class="panel-title">
           Quakes
+          <small class="text-muted pull-right">Found {{vm.quakes.features.length}}</small>
         </h3>
       </div>
-      <div class="list-group" style="overflow:auto;height:370px;">
+      <div class="list-group" ng-class="{loading:vm.loading}">
         <a href ng-click="vm.visibles=[]; vm.visibles[feature.id] = !vm.visibles[feature.id]" class="list-group-item" ng-repeat="feature in vm.quakes.features">
-          [{{feature.properties.mag}}] {{feature.properties.flynn_region}}<br>
-          <small class="text-muted">{{feature.properties.time | date:'medium'}}</small>
-          <dl class="dl-horizontal dl-horizontal-sm dl-nomargin" ng-show="vm.visibles[feature.id]">
-            <hr/>
-            <dt>Catalog</dt>
-            <dd>{{feature.properties.source_catalog}}</dd>
-            <dt>Coordin.</dt>
-            <dd>{{feature.properties.lon}}, {{feature.properties.lat}}</dd>
-            <dt>Depth</dt>
-            <dd>{{feature.properties.depth}}</dd>
-            <dt>Magnit.</dt>
-            <dd>{{feature.properties.mag}} {{feature.properties.magtype}}</dd>
-          </dl>
-        </a>
+            [{{feature.properties.mag|number:1}}] {{feature.properties.flynn_region}}
+            <small class="text-muted pull-right">{{feature.properties.time | date:'medium'}}</small>
+            <dl class="dl-horizontal dl-horizontal-sm dl-nomargin" ng-show="vm.visibles[feature.id]">
+              <hr/>
+              <dt>Catalog</dt>
+              <dd>{{feature.properties.source_catalog}}</dd>
+              <dt>Coordin.</dt>
+              <dd>{{feature.properties.lon}}, {{feature.properties.lat}}</dd>
+              <dt>Depth</dt>
+              <dd>{{feature.properties.depth}}</dd>
+              <dt>Magnit.</dt>
+              <dd>{{feature.properties.mag}} {{feature.properties.magtype}}</dd>
+            </dl>
+          </a>
       </div>
-      <div class="panel-footer">Found {{vm.quakes.features.length}}</div>
+
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">
+          Filters
+        </h3>
+      </div>
+      <div class="panel-body">
+        <div class="form-group">
+          <label class="control-label">Date Span</label>
+          <select class="form-control" ng-model="vm.filters.ds" ng-options="ds as ds.label for ds  in vm.datespan">
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="control-label">Minimum Magnitute</label>
+          <input class="form-control" ng-model="vm.filters.mag_min" />
+        </div>
+        <div class="form-group">
+          <label class="control-label">Limit</label>
+          <input class="form-control" ng-model="vm.filters.limit" />
+        </div>
+        <button class="btn btn-block btn-default" ng-click="vm.refresh()">Refresh</button>
+      </div>
     </div>
   </div>
 </div>

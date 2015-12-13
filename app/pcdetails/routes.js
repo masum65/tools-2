@@ -15,6 +15,7 @@
     return [{
       state: 'app.pcdetails',
       config: {
+        tool: "pcdetails",
         url: "/pcdetails",
         templateUrl: 'views/pcdetails/view.html',
         controller: "PCDetailsController",

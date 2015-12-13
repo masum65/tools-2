@@ -17,7 +17,10 @@
       config: {
         url: "/",
         templateUrl: 'views/home/view.html',
-        controller: "HomeController"
+        controller: "HomeController",
+        data: {
+          pageTitle: 'Home'
+        }
       }
     }];
   }

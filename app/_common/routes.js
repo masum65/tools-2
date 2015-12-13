@@ -24,6 +24,10 @@
       config: {
         abstract: true,
         templateUrl: 'views/_common/views/layout.html',
+        controller: function(TOOLS) {
+          var vm = this;
+          vm.tools = TOOLS;
+        }
       }
     }];
   }

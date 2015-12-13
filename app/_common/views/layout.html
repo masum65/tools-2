@@ -7,10 +7,10 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a ui-sref="app.home" class="navbar-brand">
+      <div class="navbar-brand">
         <i class="fa fa-wrench fa-fw"></i> Christos' Tools
         <small>v{{APP.version}}</small>
-      </a>
+      </div>
     </div>
 
     <div class="collapse navbar-collapse" uib-collapse="navbarCollapsed">
@@ -23,15 +23,12 @@
             <span class="caret"></span>
           </a>
           <ul class="uib-dropdown-menu">
-            <li><a ui-sref="app.pcdetails"><i class="fa fa-keyboard-o fa-fw"></i> PC Technical Details</a></li>
-            <li><a ui-sref="app.quakes"><i class="fa fa-bullseye fa-fw"></i> Earthquakes Map Explorer</a></li>
-            <li class="disabled"><a ui-sref="app.none">Clock Tools (alarm, stopwatch)</a></li>
-            <li class="disabled"><a ui-sref="app.none">Network Tools (speed test, ping, traceroute)</a></li>
-            <li class="disabled"><a ui-sref="app.none">Screen Share</a></li>
-            <li class="disabled"><a ui-sref="app.none">Random Data Generators (passwords, lorem, datasets)</a></li>
-            <li class="disabled"><a ui-sref="app.none">Refenes (Group Expenses Manager)</a></li>
-            <li class="disabled"><a ui-sref="app.none">Dynamic IP Registry</a></li>
-            <li class="disabled"><a ui-sref="app.none">Facebook Cover Generator</a></li>
+            <li ng-repeat="tool in vm.tools">
+              <a ui-sref="{{tool.state}}">
+                <span class="fa fa-{{tool.icon}} fa-fw"></span>
+                {{tool.title}} <small class="text-muted">v{{tool.version}}</small>
+              </a>
+            </li>
           </ul>
         </li>
 

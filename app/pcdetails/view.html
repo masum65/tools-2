@@ -1,9 +1,9 @@
 <ol class="breadcrumb">
   <li><a ui-sref="app.home">Home</a></li>
-  <li class="active">PC Technical Details</li>
+  <li class="active">{{tool.title}} v{{tool.version}}</li>
 </ol>
 <div class="row">
-  <div class="col-md-7">
+  <div class="col-sm-7">
     <div class="panel panel-default">
       <div class="panel-heading">
         <h3 class="panel-title">System and Browser</h3>
@@ -49,8 +49,11 @@
       </div>
     </div>
   </div>
-  <div class="col-md-5">
+  <div class="col-sm-5">
     <div class="panel panel-default">
+      <div class="panel-heading visible-xs">
+        <h3 class="panel-title">IP and Location</h3>
+      </div>
       <leaflet lf-center="vm.leaflet.center" markers="vm.leaflet.markers" height="400px" width="100%"></leaflet>
     </div>
   </div>

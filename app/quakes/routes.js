@@ -15,6 +15,7 @@
     return [{
       state: 'app.quakes',
       config: {
+        tool: "quakes",
         url: "/quakes",
         templateUrl: 'views/quakes/view.html',
         controller: "QuakesController",
