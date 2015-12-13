@@ -11,6 +11,8 @@
       'ui.router',
       'toaster',
       'leaflet-directive',
+      'angulartics',
+      'angulartics.google.analytics'
 
     ]);
 })();

@@ -80,6 +80,7 @@ _gulp.task('config', function() {
       version: pkg.version,
       repository: pkg.repository,
       author: pkg.author,
+      debug: (process.env.NODE_ENV != "production"),
     }) + "; })()"
   );
 
