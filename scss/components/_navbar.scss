@@ -5,7 +5,10 @@ $col-highlight: #fff;
 .navbar {
   background-color: $bg-default;
   border-color: $bg-highlight;
-  margin: 0 0 15px;
+  margin: 0 -15px 15px;
+  @media (min-width: 768px) {
+    margin: 0 0 15px;
+  }
   .navbar-brand {
     border-right: solid 1px darken($color-primary,5%);
     color: $col-default;
