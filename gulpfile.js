@@ -49,7 +49,7 @@ _gulp.task('build', ['config'], function() {
       mangle: false
     }))
     .pipe(sourcemaps.write('./'))
-    .pipe(_gulp.dest("./public/scripts/"));
+    .pipe(_gulp.dest("./public/js/"));
 });
 
 _gulp.task('copy', ['index'], function() {
@@ -73,7 +73,7 @@ _gulp.task('index', function() {
 _gulp.task('config', function() {
 
   fs.writeFileSync(
-    "./public/config.js",
+    "./public/js/config.js",
     "(function() { window.APP=" + JSON.stringify({
       name: pkg.name.charAt(0).toUpperCase() + pkg.name.slice(1),
       description: pkg.description,
