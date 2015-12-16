@@ -15,6 +15,7 @@
     return [{
       state: 'app.about',
       config: {
+        title: 'About',
         url: "/about",
         templateUrl: 'views/static/pages/about.html',
         controller: function() {
@@ -28,6 +29,7 @@
     }, {
       state: 'app.tos',
       config: {
+        title: 'Terms of Use',
         url: "/tos",
         templateUrl: 'views/static/pages/tos.html',
       }

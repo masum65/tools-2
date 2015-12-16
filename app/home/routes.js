@@ -15,11 +15,9 @@
     return [{
       state: 'app.home',
       config: {
+        title: 'Home',
         url: "/",
         templateUrl: 'views/home/view.html',
-        data: {
-          pageTitle: 'Home'
-        }
       }
     }];
   }

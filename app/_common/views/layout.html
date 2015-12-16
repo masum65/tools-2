@@ -11,7 +11,7 @@
 
       <a ui-sref="app.home" class="navbar-brand">
         <i class="fa fa-wrench fa-fw"></i> Christos' Tools
-        <small>v{{APP.version}}</small>
+        <small>{{tool.title || title ||'Home'}}</small>
       </a>
     </div>
 
@@ -26,9 +26,7 @@
           <ul class="uib-dropdown-menu">
             <li ng-repeat="tool in vm.tools">
               <a ui-sref="{{tool.state}}">
-                <span class="fa fa-{{tool.icon}} fa-fw"></span>
                 {{tool.title}}
-                <small class="text-muted">v{{tool.version}}</small>
               </a>
             </li>
           </ul>

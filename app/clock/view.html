@@ -1,19 +1,8 @@
-<ol class="breadcrumb">
-  <li><a ui-sref="app.home">Home</a></li>
-  <li class="active">{{tool.title}} v{{tool.version}}</li>
-</ol>
-<style>
-  .time {
-    font-family: monospace;
-    padding: 50px 0;
-    font-size: 10em;
-  }
-
-  .time small {
-    color: #999;
-    font-size: 0.8em;
-  }
-</style>
 <div class="text-center time">
   {{vm.hours}}:{{vm.minutes}}<small>:{{vm.seconds}}</small>
+</div>
+<div class="text-center">
+  <a ng-click="setAlarm()" class="btn btn-default btn-sm">Alarm</a>
+  <a ng-click="setCountdown()" class="btn btn-default btn-sm">Countdown</a>
+  <a ng-click="getGlobals()" class="btn btn-default btn-sm">Global Times</a>
 </div>
