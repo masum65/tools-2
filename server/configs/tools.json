@@ -1,0 +1,23 @@
+{
+  "pcdetails": {
+    "alias": "pcdetails",
+    "title": "PC Details",
+    "icon": "keyboard-o",
+    "href": "pcdetails",
+    "version": "0.1"
+  },
+  "quakes ": {
+    "alias": "quakes",
+    "title": "Earthquakes Explorer",
+    "icon": "bullseye",
+    "href": "quakes",
+    "version": "0.1"
+  },
+  "clock": {
+    "alias": "clock",
+    "title": "Clock Tools",
+    "icon": "clock-o",
+    "href": "clock",
+    "version": "0.1"
+  }
+}
