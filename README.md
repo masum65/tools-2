@@ -1,27 +1,24 @@
 # Christos' Tools
 
-A bunch of useful online tools for various type of users. Every tool is crafted with love and a lot of help from the community. Please use them wisely.
+A batch of useful online tools for various type of users. Every tool is crafted with love an help from the community. Please use them wisely.
 
 ## Tools Includes (or to be included)
-- [x] PC Technical Details
-- [x] Earthquakes Map Explorer
-- [ ] Clock Tools (alarm, stopwatch)
-- [ ] Network Tools (speed test, ping, traceroute)
-- [ ] WebRC Screen Share
-- [ ] Random Data Generators (passwords, lorem, datasets)
-- [ ] Refenes (Group Expenses Manager)
-- [ ] Dynamic IP Registry
-- [ ] Facebook Cover Generator
-- [ ] UTF8 <-> ANSI Convertor
-- [ ] Favicon Generator
-- [ ] IMG <-> PDF Convertor
-
+- PC Technical Details
+- Earthquakes Map Explorer
+- Clock Tools (alarm, stopwatch)
+- Network Tools (speed test, ping, traceroute)
+- Screen Share
+- Random Data Generators (passwords, lorem, datasets)
+- Refenes (Group Expenses Manager)
+- Dynamic IP Registry
+- Facebook Cover Generator
+- UTF8 <-> ANSI Convertor
 
 ## License
 
 The MIT License (MIT)
 
-Copyright (c) 2016 Christos Georgiou
+Copyright (c) 2015 Christos Georgiou
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
