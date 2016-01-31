@@ -22,6 +22,7 @@
       $("#hasNotFlash").show();
     }
 
+    $("#map-wrapper").addClass("loading");
     $.getJSON('location', function(data) {
 
       $("#location_ip").text(data.ip);
@@ -41,6 +42,7 @@
 
       L.marker([data.latitude, data.longitude]).addTo(map);
 
+      $("#map-wrapper").removeClass("loading");
     });
 
   });
