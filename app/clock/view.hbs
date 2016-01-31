@@ -1,5 +1,5 @@
 <ol class="breadcrumb">
-  <li><a ui-sref="app.home">Home</a></li>
+  <li><a href="/">Home</a></li>
   <li class="active">{{tool.title}} v{{tool.version}}</li>
 </ol>
 <style>
@@ -15,5 +15,5 @@
   }
 </style>
 <div class="text-center time">
-  {{vm.hours}}:{{vm.minutes}}<small>:{{vm.seconds}}</small>
+  <span id="hours">..</span>:<span id="minutes">..</span><small>:<span id="seconds">..</span></small>
 </div>
