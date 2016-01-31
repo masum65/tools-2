@@ -1,8 +1,31 @@
+  /*jshint multistr: true */
+
   $(function() {
 
     var map = L.map('map').setView([0, 0], 1);
     var mg_colors = ['#008000', '#547c00', '#807500', '#a46a00', '#c05e00', '#df4600', '#ff0000'];
     var dataLayer = null;
+    _.templateSettings = {
+      interpolate: /\{\{(.+?)\}\}/g
+    };
+    var template = _.template(
+      "<a href ng-click='vm.visibles=[]; vm.visibles[id] = !vm.visibles[id]' \
+        class='list-group-item' ng-repeat='in vm.quakes.features'> \
+        [{{properties.mag}}] {{properties.flynn_region}} \
+        <dl class='dl-horizontal dl-horizontal-sm dl-nomargin' ng-show='vm.visibles[id]'> \
+          <hr/> \
+          <dt>Date</dt> \
+          <dd>{{properties.time}}</dd> \
+          <dt>Catalog</dt> \
+          <dd>{{properties.source_catalog}}</dd> \
+          <dt>Coordin.</dt> \
+          <dd>{{properties.lon}}, {{properties.lat}}</dd> \
+          <dt>Depth</dt> \
+          <dd>{{properties.depth}}</dd> \
+          <dt>Magnit.</dt> \
+          <dd>{{properties.mag}} {{properties.magtype}}</dd> \
+        </dl> \
+      </a>");
 
     function _loadQuakes() {
 
@@ -10,6 +33,8 @@
 
         if (dataLayer) map.removeLayer(dataLayer);
         dataLayer = new L.FeatureGroup();
+        $("#quakes").empty();
+
         _.each(quakes.features, function(feature) {
           L.marker(
               [feature.properties.lat, feature.properties.lon], {
@@ -28,7 +53,10 @@
               fillOpacity: 0.5,
             }).addTo(dataLayer);
 
+          $("#quakes").append(template(feature));
+
         });
+        $("#found").text(quakes.features.length);
         map.addLayer(dataLayer);
 
       });
