@@ -1,0 +1,68 @@
+<div class="row">
+  <div class="col-sm-7">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">System and Browser</h3>
+      </div>
+      <div class="panel-body">
+        <dl class="dl-horizontal dl-nomargin">
+          <dt>Browser</dt>
+          <dd>{{vm.system.browser.family}} {{vm.system.browser.major}}.{{vm.system.browser.minor}}.{{vm.system.browser.patch}}</dd>
+          <dt>Operating System</dt>
+          <dd>{{vm.system.os.family}} {{vm.system.os.major}}.{{vm.system.os.minor}}.{{vm.system.os.patch}}</dd>
+          <dt>Device</dt>
+          <dd>{{vm.system.device.family}} {{vm.system.device.major}}.{{vm.system.device.minor}}.{{vm.system.device.patch}}</dd>
+          <hr/>
+          <dt>Display Resolution</dt>
+          <dd>{{vm.system.screenWidth}} x {{vm.system.screenHeight}}</dd>
+          <dt>Browser Resolution</dt>
+          <dd>{{vm.system.innerWidth}} x {{vm.system.innerHeight}}</dd>
+          <hr/>
+          <dt>Flash Plugin</dt>
+          <dd ng-if="vm.system.flash">Enabled - Version {{vm.system.flash.major}}.{{vm.system.flash.minor}}.{{vm.system.flash.release}}</dd>
+          <dd ng-if="!vm.system.flash">Disabled / Undetected</dd>
+          <dt>Cookies</dt>
+          <dd ng-if="vm.system.cookies">Enabled</dd>
+          <dd ng-if="!vm.system.cookies">Disabled</dd>
+        </dl>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">IP and Location</h3>
+      </div>
+      <div class="panel-body">
+        <dl class="dl-horizontal dl-nomargin">
+          <dt>IP</dt>
+          <dd>{{vm.location.ip}}</dd>
+          <dt>Location</dt>
+          <dd>{{vm.location.city}} {{vm.location.region_name}}, {{vm.location.country_name}}</dd>
+          <dt>Global Coordinates</dt>
+          <dd>{{vm.location.latitude}}, {{vm.location.longitude}}</dd>
+          <dt>Time Zone</dt>
+          <dd>{{vm.location.time_zone}}</dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-5">
+    <div class="panel panel-default">
+      <div class="panel-heading visible-xs">
+        <h3 class="panel-title">IP and Location</h3>
+      </div>
+      <leaflet lf-center="vm.leaflet.center" markers="vm.leaflet.markers" height="400px" width="100%"></leaflet>
+    </div>
+  </div>
+</div>
+<!-- <div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">APIs Used</h3>
+  </div>
+  <div class="panel-body">
+    <ul class="list-unstyled">
+      <li><a target="_blank" href="http://freegeoip.net">freegeoip.net</a></li>
+      <li><a target="_blank" href="https://github.com/3rd-Eden/useragent">useragent</a></li>
+      <li><a target="_blank" href="http://leafletjs.com/">leaflet</a></li>
+    </ul>
+  </div>
+</div> -->
