@@ -6,7 +6,7 @@
     "href": "pcdetails",
     "version": "0.1"
   },
-  "quakes ": {
+  "quakes": {
     "alias": "quakes",
     "title": "Earthquakes Explorer",
     "icon": "bullseye",
