@@ -1,6 +1,6 @@
 {
   "name": "tools",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "A collection of simple online tools",
   "main": "bin/www",
   "license": "MIT",

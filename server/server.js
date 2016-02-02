@@ -37,6 +37,7 @@ app.use(express.static(path.join(__dirname, '..', 'assets')));
 app.locals.APP = {
   version: pkg.version,
   author: pkg.author,
+  repository: pkg.repository,
 };
 
 app.locals.TOOLS = require(path.join(__dirname, "configs", "tools.json"));
