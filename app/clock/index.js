@@ -1,5 +1,6 @@
 var fs = require('fs');
 var express = require('express');
+var path = require('path');
 var router = express.Router();
 
 router.get('/', function(req, res, next) {
@@ -8,7 +9,7 @@ router.get('/', function(req, res, next) {
 
   res.render('clock/view', {
     title: ' - Clock',
-    script: fs.readFileSync("./app/clock/script.js", "utf8"),
+    script: fs.readFileSync(path.join(__dirname, "script.js"), "utf8"),
   });
 
 });

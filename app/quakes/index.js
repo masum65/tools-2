@@ -3,6 +3,7 @@ var request = require('request');
 var fs = require('fs');
 var express = require('express');
 var _ = require('underscore');
+var path = require('path');
 var router = express.Router();
 
 var _defaults = {
@@ -67,7 +68,7 @@ router.get('/', function(req, res, next) {
 
   res.render('quakes/view', {
     title: ' - Quakes',
-    script: fs.readFileSync("./app/quakes/script.js", "utf8"),
+    script: fs.readFileSync(path.join(__dirname, "script.js"), "utf8"),
   });
 
 });

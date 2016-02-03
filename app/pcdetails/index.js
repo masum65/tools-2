@@ -1,6 +1,7 @@
 var request = require('request');
 var fs = require('fs');
 var express = require('express');
+var path = require('path');
 var router = express.Router();
 
 router.get('/', function(req, res, next) {
@@ -23,7 +24,7 @@ router.get('/', function(req, res, next) {
 
   res.render('pcdetails/view', {
     title: ' - PCDetails',
-    script: fs.readFileSync("./app/pcdetails/script.js", "utf8"),
+    script: fs.readFileSync(path.join(__dirname, "script.js"), "utf8"),
   });
 
 });
