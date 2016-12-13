@@ -14,15 +14,15 @@
     "start": "nodemon --watch app --watch server"
   },
   "dependencies": {
-    "body-parser": "~1.14.2",
+    "body-parser": "~1.15.2",
     "cookie-parser": "~1.4.1",
-    "debug": "~2.2.0",
-    "express": "~4.13.1",
-    "fs-extra": "^0.26.2",
+    "debug": "~2.3.3",
+    "express": "~4.14.0",
+    "fs-extra": "^1.0.0",
     "hbs": "~4.0.0",
     "moment": "^2.11.1",
-    "morgan": "~1.6.1",
-    "node-sass-middleware": "0.9.7",
+    "morgan": "~1.7.0",
+    "node-sass-middleware": "0.10.0",
     "serve-favicon": "~2.3.0",
     "underscore": "^1.8.3",
     "useragent": "^2.1.8"
